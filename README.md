@@ -70,7 +70,7 @@ L'outil est accessible: http://127.0.0.1:42000
 
 https://pwning.owasp-juice.shop/part1/running.html
 
-## Premiers pas avec Juice Shope
+## Premiers pas avec Juice Shop
 
 Juice shop est une boutique en ligne trouée de vulnérabilités . Elle permet de s’exercer au pentest web et contient l’ensemble du top 10 des vulnérabilités de l’OWASP (https://owasp.org/Top10/fr/)
 
