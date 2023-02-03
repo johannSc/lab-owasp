@@ -25,27 +25,54 @@ Puis déploiement de Kali Linux (via l'ISO pour choisir les paramètres géograp
 
 ### Préparation du TP
 
-Première chose à faire, c'est la mise à jour du système et des dépôts associés depuis le terminal fraichement lancé sous Kali:
+Première chose à faire, c'est l'installation des VBoxGuestAdditions, pour ceci, sous VirtualBox (une fois Kali démarrée)
+Onglet _Périphériques_, puis _Insérer l'image cd_..
+
+Ensuite dans Kali, ouvrez un terminal:
 
 ```
 sudo su
+cd /media/cdrom0
+sh VBoxLinuxAdditions.run
+```
+Tapez ensuite _yes_, puis redémarrer l'OS. Une fois les outils additionnels installés, le redimensionnement de l'écran, le partage de fichiers...seront disponibles.
+
+On enchaine sur la mise à jour du système et des dépôts associés depuis le terminal fraichement lancé sous Kali:
+
+```
 apt update
 apt upgrade -y
 ```
 
 ## Juice Shope
 
-### Echauffement
-
 Juice shop est une boutique en ligne trouée de vulnérabilités . Elle permet de s’exercer au pentest web et contient l’ensemble du top 10 des vulnérabilités de l’OWASP (https://owasp.org/Top10/fr/)
+
+La dernière version de Kali gère les dépôts de l'outil à partir de sa version 2022, on va donc simplement l'installer:
+
+```
+apt install juice-shop
+```
+
+L'outil est accessible: http://localhost:3000
+
+### Echauffement
 
 Pour pouvoir utiliser l'outil, il y a des challenges d'échauffement. Les réponses sont apportées dans ce TP, tentez d'abord de chercher :)
 
-On se rend sur l’URL de notre instance juice-shop port 3000. Première étape, il faut trouver l’interface de scoreboard de juiceshop. Pour cela, il suffit de lire le code du site (main.js). Nous pouvons également voir une page d’administration, mais nous n’avons pas les droits suffisant pour y accéder .
+Première étape:
 
-    ” 403 Forbidden ”
+* trouver l’interface de scoreboard de juiceshop. Pour cela, regardez du coté du code du site (main.js).
 
-On peut ensuite se rendre sur l’URL http://ip_juice_shop:3000/score-board/ . Nous pouvons voir la réussite du premier challenge.
+* Nous pouvons également voir une page d’administration, mais nous n’avons pas les droits suffisant pour y accéder 
+
+```
+403 Forbidden
+```
+
+Seconde étape:
+
+||On peut ensuite se rendre sur l’URL http://ip_juice_shop:3000/score-board/ . Nous pouvons voir la réussite du premier challenge||
 
 Bien nous allons nous échauffer encore un peu avec la réalisation d’une simple XSS Reflected . Le challenge XSS Tier 0 sur l’image ci-dessus demande la réalisation d’une attaque XSS . Pour cela il faut taper <iframe src=”javascript:alert(`xss`)”> dans la barre de recherche de la boutique et nous réalisons une attaque de type XSS Reflected. Ce qui se traduit par : Ouvrir dans la page actuelle un popup avec le texte “xss”. Un pirate mettra bien évidemment un autre code .
 
