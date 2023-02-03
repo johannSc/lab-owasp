@@ -117,6 +117,8 @@ Nous utiliserons l’injection SQL pour réaliser ce défi.
 
 * L’injection SQL est une méthode d’attaque très connue. C’est un vecteur d’attaque extrêmement puissant quand il est bien exploité. Il consiste à modifier une requête SQL en injectant des morceaux de code non filtrés, généralement par le biais d’un formulaire.
 * Il faut se rendre dans le formulaire de connexion au site . Nous utiliserons ici en login une instruction basique et un mot de passe pris au hasard. De nombreux exemples sur votre moteur de recherche favori...
+  * Vous pouvez utiliser _l'outil de développement web_ de Firefox lors de cette première connexion
+  * Prenez le temps d'étudier l'erreur 500, notamment dans la partie _réponse_ du serveur
 * Cette instruction authentifiera la première personne dans la table Users (car la condition est vraie)qui se trouve être par hasard et par chance l’administrateur. [^inject-sql]
 
 --> Au passage nous pouvons maintenant accéder à l’interface d’administration repérer dans la première partie. Nous récupérons beaucoup d’informations comme les adresses mail des utilisateurs inscrits, leurs ID sur le site, etc..
@@ -131,4 +133,4 @@ URL http://ip_juice_shop:42000/#/score-board/
 
 [^mdp]: Je saisis 12345 en premier et deuxième mot de passe . Avant de valider, je remodifie le premier mot de passe entrée par 12349 sans toucher au deuxième mot de passe, puis je valide l’inscription. Aucune erreur n’est remontée et le challenge est validé .
 
-[^inject-sql]: type d'injection toujours vraie: ``` ‘ or 1=1– ```
+[^inject-sql]: type d'injection toujours vraie: ``` ' OR TRUE -- ```
