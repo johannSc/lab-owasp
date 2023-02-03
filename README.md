@@ -31,7 +31,7 @@ Première chose à faire, c'est la mise à jour du système et des dépôts asso
 sudo su
 apt update
 apt upgrade -y
-
+```
 
 
 
