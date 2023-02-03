@@ -9,14 +9,13 @@ Pour installer le lab, nous allons avoir besoin à minima des ressources suivant
 #### via une VM
 
 * Kali linux dans sa version 2022, disponible ici: https://www.kali.org/get-kali/
-* Une autre distribution cible, je prends pour ma part une Debian11 disponible ici: https://www.debian.org/distrib/index.fr.html
 * VirtualBox 7 pour la machine hôte, disponible ici: https://www.virtualbox.org/wiki/Downloads
 
 -> attention pour les détenteurs des macbook dernière génération, c'est du processeur ARM...
 
 #### via Docker
 
-https://pwning.owasp-juice.shop/part1/running.html
+
 
 ### Installations
 
@@ -30,6 +29,8 @@ Déployer virtualbox sur la machine hôte, j'ai indiqué sous VB les ressources 
 Puis déploiement de Kali Linux (via l'ISO pour choisir les paramètres géographiques, sinon j'ai choisi tous les paramètres par défaut)
 
 ### Préparation du TP
+
+#### Sous Kali
 
 Première chose à faire, c'est l'installation des VBoxGuestAdditions, pour ceci, sous VirtualBox (une fois Kali démarrée)
 Onglet _Périphériques_, puis _Insérer l'image cd_..
@@ -50,11 +51,7 @@ apt update
 apt upgrade -y
 ```
 
-## Juice Shope
-
-Juice shop est une boutique en ligne trouée de vulnérabilités . Elle permet de s’exercer au pentest web et contient l’ensemble du top 10 des vulnérabilités de l’OWASP (https://owasp.org/Top10/fr/)
-
-La dernière version de Kali gère les dépôts de l'outil à partir de sa version 2022, on va donc simplement l'installer:
+La dernière version de Kali gère les dépôts de juice-shop à partir de sa version 2022, on va donc simplement l'installer:
 
 ```
 apt install juice-shop
@@ -68,6 +65,14 @@ juice-shop
 ```
 
 L'outil est accessible: http://127.0.0.1:42000
+
+#### Sous Docker
+
+https://pwning.owasp-juice.shop/part1/running.html
+
+## Premiers pas avec Juice Shope
+
+Juice shop est une boutique en ligne trouée de vulnérabilités . Elle permet de s’exercer au pentest web et contient l’ensemble du top 10 des vulnérabilités de l’OWASP (https://owasp.org/Top10/fr/)
 
 ### Echauffement
 
