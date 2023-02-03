@@ -62,7 +62,7 @@ Pour pouvoir utiliser l'outil, il y a des challenges d'échauffement. Les répon
 
 #### trouver l’interface de scoreboard de juiceshop
 
-Regardez les sources, les premières infos qu'on peut trouver pour comprendre comment se connecter [^interface]
+Regardez les sources, les premières infos qu'on peut trouver pour comprendre comment se connecter et trouver le relevé des scores [^interface]
 
 #### réalisation d’une simple XSS Reflected . 
 
@@ -106,7 +106,7 @@ Après plusieurs tentatives, j’ai entré l’XSS suivante
 
 ## Solutions
 
-[^interface]: Pour trouver l'interface principale, regardez du coté du code du site (main.js)
+[^interface]: Pour trouver l'interface de scoring, regardez du coté du code du site (main.js)
 
 URL http://ip_juice_shop:3000/score-board/ 
 
