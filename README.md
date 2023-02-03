@@ -27,11 +27,11 @@ Puis déploiement de Kali Linux (via l'ISO pour choisir les paramètres géograp
 
 Première chose à faire, c'est la mise à jour du système et des dépôts associés depuis le terminal fraichement lancé sous Kali:
 
-'''
+```
 sudo su
 apt update
 apt upgrade -y
-'''
+
 
 
 
