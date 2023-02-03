@@ -54,7 +54,7 @@ La dernière version de Kali gère les dépôts de l'outil à partir de sa versi
 apt install juice-shop
 ```
 
-L'outil est accessible: http://localhost:3000
+L'outil est accessible: http://127.0.0.1:42000
 
 ### Echauffement
 
