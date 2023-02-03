@@ -54,6 +54,13 @@ La dernière version de Kali gère les dépôts de l'outil à partir de sa versi
 apt install juice-shop
 ```
 
+Puis ensuite toujours depuis le terminal, lancer le service juice-shop (de la même manière on peut l'arrrêter avec _juice-shop-stop_)
+
+
+```
+juice-shop
+```
+
 L'outil est accessible: http://127.0.0.1:42000
 
 ### Echauffement
