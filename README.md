@@ -106,11 +106,11 @@ Après plusieurs tentatives, j’ai entré l’XSS suivante
 
 ## Solutions
 
-[^interface] Pour trouver l'interface principale, regardez du coté du code du site (main.js)
+[^interface]: Pour trouver l'interface principale, regardez du coté du code du site (main.js)
 
 URL http://ip_juice_shop:3000/score-board/ 
 
-[^xss-reflected] Pour cela il faut taper <iframe src=”javascript:alert(`xss`)”> dans la barre de recherche de la boutique et nous réalisons une attaque de type XSS Reflected.
+[^xss-reflected]: Pour cela il faut taper <iframe src=”javascript:alert(`xss`)”> dans la barre de recherche de la boutique et nous réalisons une attaque de type XSS Reflected.
 
-[^mdp] Je saisis 12345 en premier et deuxième mot de passe . Avant de valider, je remodifie le premier mot de passe entrée par 12349 sans toucher au deuxième mot de passe, puis je valide l’inscription. Aucune erreur n’est remontée et le challenge est validé .
+[^mdp]: Je saisis 12345 en premier et deuxième mot de passe . Avant de valider, je remodifie le premier mot de passe entrée par 12349 sans toucher au deuxième mot de passe, puis je valide l’inscription. Aucune erreur n’est remontée et le challenge est validé .
 
