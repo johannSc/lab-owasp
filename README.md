@@ -64,6 +64,10 @@ Pour pouvoir utiliser l'outil, il y a des challenges d'échauffement. Les répon
 
 Regardez les sources, les premières infos qu'on peut trouver pour comprendre comment se connecter et trouver le relevé des scores [^interface]
 
+#### trouver l'interface d'administration
+
+De la même manière vous pouvez trouver l'interface d'admin. Cependant celle ci ne sera accessible que lorsqu'on aura trouvé comment passer admin...
+
 #### réalisation d’une simple XSS Reflected . 
 
 Le challenge _XSS Tier 0_ demande la réalisation d’une attaque XSS . 
