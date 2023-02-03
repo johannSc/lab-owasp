@@ -72,7 +72,9 @@ Première étape:
 
 Seconde étape:
 
-||On peut ensuite se rendre sur l’URL http://ip_juice_shop:3000/score-board/ . Nous pouvons voir la réussite du premier challenge||
+||
+On peut ensuite se rendre sur l’URL http://ip_juice_shop:3000/score-board/ . Nous pouvons voir la réussite du premier challenge
+||
 
 Bien nous allons nous échauffer encore un peu avec la réalisation d’une simple XSS Reflected . Le challenge XSS Tier 0 sur l’image ci-dessus demande la réalisation d’une attaque XSS . Pour cela il faut taper <iframe src=”javascript:alert(`xss`)”> dans la barre de recherche de la boutique et nous réalisons une attaque de type XSS Reflected. Ce qui se traduit par : Ouvrir dans la page actuelle un popup avec le texte “xss”. Un pirate mettra bien évidemment un autre code .
 
