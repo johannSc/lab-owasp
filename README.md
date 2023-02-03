@@ -109,22 +109,17 @@ Trouvez comment entrer un mot de passe sans respecter la règle initiale [^mdp]
 
 ### Easy Challenge
 
-Un autre défi où nous devons nous connecter en tant qu’administrateurs sur le site juiceshop.
+#### Admin connexion
 
-Nous utiliserons l’injection SQL pour réaliser ce défi. L’injection SQL est une méthode d’attaque très connue. C’est un vecteur d’attaque extrêmement puissant quand il est bien exploité. Il consiste à modifier une requête SQL en injectant des morceaux de code non filtrés, généralement par le biais d’un formulaire.
+Un nouveau défi, nous devons nous connecter en tant qu’administrateurs sur le site juice-shop.
 
-Il faut se rendre dans le formulaire de connexion au site . Nous utiliserons ici en login une instruction basique toujours vraie ‘ or 1=1– et un mot de passe pris au hasard. Cette instruction authentifiera la première personne dans la table Users (car la condition est vraie)qui se trouve être par hasard et par chance l’administrateur.
+Nous utiliserons l’injection SQL pour réaliser ce défi. 
 
-Au passage nous pouvons maintenant accéder à l’interface d’administration repérer dans la partie échauffement . Nous récupérons beaucoup d’informations comme les adresses mail des utilisateurs inscrits, leurs ID sur le site, etc..
+* L’injection SQL est une méthode d’attaque très connue. C’est un vecteur d’attaque extrêmement puissant quand il est bien exploité. Il consiste à modifier une requête SQL en injectant des morceaux de code non filtrés, généralement par le biais d’un formulaire.
+* Il faut se rendre dans le formulaire de connexion au site . Nous utiliserons ici en login une instruction basique et un mot de passe pris au hasard. De nombreux exemples sur votre moteur de recherche favori...
+* Cette instruction authentifiera la première personne dans la table Users (car la condition est vraie)qui se trouve être par hasard et par chance l’administrateur. [^inject-sql]
 
-Le dernier défi que j’ai apprécié et une attaque XSS sur une entrée filtrée par le site web .
-
-Étant connecté en tant qu’administrateur, j’ai modifié son profil . En username, j’ai entré la même XSS que tester au-dessus
-<script>alert(`computer-security.fr`)</script> . On remarque sous la photo de profil que le nom d’utilisateur est maintenant lert(`computer-security.fr`) ce qui indique que l’entrée username est filtrée. Ici le début de l’entrée est filtré.
-
-Après plusieurs tentatives, j’ai entré l’XSS suivante
-<<a|ascript>alert(`computer-security.fr`)</script> pour valider le challenge. Le filtre mis en place va supprimer cette partie <a|a . La popup apparaît et le challenge est validé.
-
+--> Au passage nous pouvons maintenant accéder à l’interface d’administration repérer dans la première partie. Nous récupérons beaucoup d’informations comme les adresses mail des utilisateurs inscrits, leurs ID sur le site, etc..
 
 ## Solutions
 
@@ -136,3 +131,4 @@ URL http://ip_juice_shop:42000/#/score-board/
 
 [^mdp]: Je saisis 12345 en premier et deuxième mot de passe . Avant de valider, je remodifie le premier mot de passe entrée par 12349 sans toucher au deuxième mot de passe, puis je valide l’inscription. Aucune erreur n’est remontée et le challenge est validé .
 
+[^inject-sql]: type d'injection toujours vraie: ``` ‘ or 1=1– ```
