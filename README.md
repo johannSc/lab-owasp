@@ -108,7 +108,7 @@ Après plusieurs tentatives, j’ai entré l’XSS suivante
 
 [^interface]: Pour trouver l'interface de scoring, regardez du coté du code du site (main.js)
 
-URL http://ip_juice_shop:3000/score-board/ 
+URL http://ip_juice_shop:42000/#/score-board/ 
 
 [^xss-reflected]: Pour cela il faut taper <iframe src=”javascript:alert(`xss`)”> dans la barre de recherche de la boutique et nous réalisons une attaque de type XSS Reflected.
 
