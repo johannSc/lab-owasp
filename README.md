@@ -15,7 +15,7 @@ Pour installer le lab, nous allons avoir besoin à minima des ressources suivant
 
 #### via Docker
 
-
+Installation de Docker Desktop: https://www.docker.com/products/docker-desktop/
 
 ### Installations
 
