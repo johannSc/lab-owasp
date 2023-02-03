@@ -6,11 +6,17 @@
 
 Pour installer le lab, nous allons avoir besoin à minima des ressources suivantes:
 
+#### via une VM
+
 * Kali linux dans sa version 2022, disponible ici: https://www.kali.org/get-kali/
 * Une autre distribution cible, je prends pour ma part une Debian11 disponible ici: https://www.debian.org/distrib/index.fr.html
 * VirtualBox 7 pour la machine hôte, disponible ici: https://www.virtualbox.org/wiki/Downloads
 
 -> attention pour les détenteurs des macbook dernière génération, c'est du processeur ARM...
+
+#### via Docker
+
+https://pwning.owasp-juice.shop/part1/running.html
 
 ### Installations
 
