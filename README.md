@@ -58,39 +58,32 @@ L'outil est accessible: http://localhost:3000
 
 ### Echauffement
 
-Pour pouvoir utiliser l'outil, il y a des challenges d'échauffement. Les réponses sont apportées dans ce TP, tentez d'abord de chercher :)
+Pour pouvoir utiliser l'outil, il y a des challenges d'échauffement. Les réponses sont apportées, tentez d'abord de chercher avant de cliquer sur le lien qui ramène tout en bas de ce TP :)
 
-Première étape:
+#### trouver l’interface de scoreboard de juiceshop
 
-* trouver l’interface de scoreboard de juiceshop. Pour cela, regardez du coté du code du site (main.js).
+Regardez les sources, les premières infos qu'on peut trouver pour comprendre comment se connecter [^interface]
 
-* Nous pouvons également voir une page d’administration, mais nous n’avons pas les droits suffisant pour y accéder 
+#### réalisation d’une simple XSS Reflected . 
+
+Le challenge _XSS Tier 0_ demande la réalisation d’une attaque XSS . 
+
+* Une XSS permet à un attaquant d’injecter un script dans le contenu d’un site Web ou d’une application. Lorsqu’un utilisateur visite la page infectée, le script s’exécute dans le navigateur de la victime. Dans le cas présent, ça nécessite d'ouvrir la page actuelle avec un popup et le texte “xss”.
+
+* Une XSS reflected (ou également appelé attaque XSS non persistante) est un type spécifique de XSS. Elle est transmise dans la requête, généralement dans l’URL. Comparé au XSS stocké, le XSS reflected nécessite que le script malveillant soit ajouté à un lien et qu’un utilisateur clique dessus [^xss-reflected]
+
+#### mot de passe invalide
+
+Nous allons nous inscrire sur la boutique avec l’adresse mail _bidon@gmail.com_ et le mot de passe 12345 en ne respectant pas les condition de mot de passe du site.
+
+* Je me rends sur la page d’inscription et remplis les différents champs demandés.
+* Lors de l’inscription, si le deuxième mot de passe n’est pas identique au premier mot de passe saisi, nous aurons une erreur.
 
 ```
-403 Forbidden
+Les mots de passes ne correspondent pas
 ```
 
-Seconde étape:
-
-||
-On peut ensuite se rendre sur l’URL http://ip_juice_shop:3000/score-board/ . Nous pouvons voir la réussite du premier challenge
-||
-
-Bien nous allons nous échauffer encore un peu avec la réalisation d’une simple XSS Reflected . Le challenge XSS Tier 0 sur l’image ci-dessus demande la réalisation d’une attaque XSS . Pour cela il faut taper <iframe src=”javascript:alert(`xss`)”> dans la barre de recherche de la boutique et nous réalisons une attaque de type XSS Reflected. Ce qui se traduit par : Ouvrir dans la page actuelle un popup avec le texte “xss”. Un pirate mettra bien évidemment un autre code .
-
-Une XSS permet à un attaquant d’injecter un script dans le contenu d’un site Web ou d’une application. Lorsqu’un utilisateur visite la page infectée, le script s’exécute dans le navigateur de la victime.
-
-Une XSS reflected (ou également appelé attaque XSS non persistante) est un type spécifique de XSS. Elle est transmise dans la requête, généralement dans l’URL. Comparé au XSS stocké, le XSS reflected nécessite que le script malveillant soit ajouté à un lien et qu’un utilisateur clique dessus.
-
-Dernier petit échauffement avant d’attaquer les challenges de niveaux 2 et 3.
-Nous allons nous inscrire sur la boutique avec l’adresse mail azerty@msn.com et le mot de passe 12345 en ne respectant pas les condition de mot de passe du site . Je me rends sur la page d’inscription et remplis les différents champs demandés.
-Lors de l’inscription, si le deuxième mot de passe n’est pas identique au premier mot de passe saisi, nous aurons une erreur.
-
-    « Les mots de passes ne correspondent pas »
-
-Ce qui est logique . Je saisis donc 12345 en deuxième mot de passe . Avant de valider, je remodifie le premier mot de passe entrée par 12349 sans toucher au deuxième mot de passe. Puis je valide l’inscription.
-
-Aucune erreur n’est remontée et le challenge est validé . J’ai volontairement modifié le code pour passer le type des “passwords” en “text” pour que vous puissiez voir les valeurs avant la validation du formulaire.
+Trouvez comment entrer un mot de passe sans respecter la règle initiale [^mdp]
 
 ### Easy Challenge
 
@@ -111,8 +104,13 @@ Après plusieurs tentatives, j’ai entré l’XSS suivante
 <<a|ascript>alert(`computer-security.fr`)</script> pour valider le challenge. Le filtre mis en place va supprimer cette partie <a|a . La popup apparaît et le challenge est validé.
 
 
+## Solutions
 
+[^interface] Pour trouver l'interface principale, regardez du coté du code du site (main.js)
 
+URL http://ip_juice_shop:3000/score-board/ 
 
+[^xss-reflected] Pour cela il faut taper <iframe src=”javascript:alert(`xss`)”> dans la barre de recherche de la boutique et nous réalisons une attaque de type XSS Reflected.
 
+[^mdp] Je saisis 12345 en premier et deuxième mot de passe . Avant de valider, je remodifie le premier mot de passe entrée par 12349 sans toucher au deuxième mot de passe, puis je valide l’inscription. Aucune erreur n’est remontée et le challenge est validé .
 
