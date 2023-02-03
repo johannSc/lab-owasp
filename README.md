@@ -123,6 +123,12 @@ Nous utiliserons l’injection SQL pour réaliser ce défi.
 
 --> Au passage nous pouvons maintenant accéder à l’interface d’administration repérer dans la première partie. Nous récupérons beaucoup d’informations comme les adresses mail des utilisateurs inscrits, leurs ID sur le site, etc..
 
+#### Documents confidentiels
+
+Des scanners de site comme spiders, ou encore nikto permettent de remonter rapidement des informations qui peuvent être très intéressantes dans le cadre d'une intrusion.
+
+Dans le cas présent, nikto fera parfaitement l'affaire. Regardez bien lors du scan les répertoires qui remontent et ce qui s'y trouve. [^confidential]
+
 ## Solutions
 
 [^interface]: Pour trouver l'interface de scoring, regardez du coté du code du site (main.js) 
@@ -134,3 +140,5 @@ URL http://ip_juice_shop:42000/#/score-board/
 [^mdp]: Je saisis 12345 en premier et deuxième mot de passe . Avant de valider, je remodifie le premier mot de passe entrée par 12349 sans toucher au deuxième mot de passe, puis je valide l’inscription. Aucune erreur n’est remontée et le challenge est validé .
 
 [^inject-sql]: type d'injection toujours vraie: ``` ' OR TRUE -- ```
+ 
+[^confidential]: ``` nikto -h http://url:port ``` : Entry '/ftp/' in robots.txt returned a non-forbidden or redirect HTTP code (200)
