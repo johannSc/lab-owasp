@@ -70,7 +70,7 @@ De la même manière vous pouvez trouver l'interface d'admin. Cependant celle ci
 
 #### réalisation d’une simple XSS Reflected . 
 
-Le challenge _XSS Tier 0_ demande la réalisation d’une attaque XSS . 
+Le challenge _DOM XSS_ demande la réalisation d’une attaque XSS . 
 
 * Une XSS permet à un attaquant d’injecter un script dans le contenu d’un site Web ou d’une application. Lorsqu’un utilisateur visite la page infectée, le script s’exécute dans le navigateur de la victime. Dans le cas présent, ça nécessite d'ouvrir la page actuelle avec un popup et le texte “xss”.
 
@@ -110,9 +110,9 @@ Après plusieurs tentatives, j’ai entré l’XSS suivante
 
 ## Solutions
 
-[^interface]: Pour trouver l'interface de scoring, regardez du coté du code du site (main.js)
-
+[^interface]: Pour trouver l'interface de scoring, regardez du coté du code du site (main.js) 
 URL http://ip_juice_shop:42000/#/score-board/ 
+
 
 [^xss-reflected]: Pour cela il faut taper <iframe src=”javascript:alert(`xss`)”> dans la barre de recherche de la boutique et nous réalisons une attaque de type XSS Reflected.
 
