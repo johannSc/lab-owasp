@@ -68,7 +68,7 @@ Juice shop est une boutique en ligne trouée de vulnérabilités . Elle permet d
 
 ### Echauffement
 
-Pour pouvoir utiliser l'outil, il y a des challenges d'échauffement. Les réponses sont apportées, tentez d'abord de chercher avant de cliquer sur le lien qui ramène tout en bas de ce TP :)
+Pour pouvoir utiliser l'outil, il y a des challenges d'échauffement. 
 
 #### trouver l’interface de scoreboard de juiceshop
 
