@@ -13,10 +13,6 @@ Pour installer le lab, nous allons avoir besoin à minima des ressources suivant
 
 -> attention pour les détenteurs des macbook dernière génération, c'est du processeur ARM...
 
-#### via Docker
-
-Installation de Docker Desktop: https://www.docker.com/products/docker-desktop/
-
 ### Installations
 
 Déployer virtualbox sur la machine hôte, j'ai indiqué sous VB les ressources suivantes:
@@ -54,8 +50,18 @@ apt upgrade -y
 La dernière version de Kali gère les dépôts de juice-shop à partir de sa version 2022, on va donc simplement l'installer:
 
 ```
-apt install juice-shop
+apt install npm
 ```
+
+Puis clonez le dépot et installez l'outil:
+
+```
+git clone https://github.com/juice-shop/juice-shop.git --depth 1
+cd juice-shop
+npm install
+```
+
+
 
 Puis ensuite toujours depuis le terminal, lancer le service juice-shop (de la même manière on peut l'arrrêter avec _juice-shop-stop_)
 
