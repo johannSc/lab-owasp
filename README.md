@@ -50,8 +50,6 @@ apt upgrade -y
 La dernière version de Kali ne gère plus les dépôts de juice-shop à partir de sa version 2023, on va donc utiliser docker:
 
 ```
-apt update
-apt upgrade -y
 apt install docker.io
 ```
 
