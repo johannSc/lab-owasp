@@ -47,34 +47,22 @@ apt update
 apt upgrade -y
 ```
 
-La dernière version de Kali gère les dépôts de juice-shop à partir de sa version 2022, on va donc simplement l'installer:
+La dernière version de Kali ne gère plus les dépôts de juice-shop à partir de sa version 2023, on va donc utiliser docker:
 
 ```
-apt install npm
+apt update
+apt upgrade -y
+apt install docker.io
 ```
 
-Puis clonez le dépot et installez l'outil:
+Puis télécharger et lancer le conteneur juice-shop
 
 ```
-git clone https://github.com/juice-shop/juice-shop.git --depth 1
-cd juice-shop
-npm install
+sudo docker pull bkimminich/juice-shop
+sudo docker run --rm -p 3000:3000 bkimminich/juice-shop
 ```
+Le site est ensuite consultable en localhost: http://localhost:3000. Attention ne fermez pas le terminal sous docker, au risque de fermer l'application.
 
-
-
-Puis ensuite toujours depuis le terminal, lancer le service juice-shop (de la même manière on peut l'arrrêter avec _juice-shop-stop_)
-
-
-```
-juice-shop
-```
-
-L'outil est accessible: http://127.0.0.1:42000
-
-#### Sous Docker
-
-https://pwning.owasp-juice.shop/part1/running.html
 
 ## Premiers pas avec Juice Shop
 
